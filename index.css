@@ -1,0 +1,78 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #0f172a;
+  color: #e0e7ff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#historyList {
+  scrollbar-width: thin;
+  scrollbar-color: #2563eb transparent;
+}
+
+#historyList::-webkit-scrollbar {
+  width: 8px;
+}
+
+#historyList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#historyList::-webkit-scrollbar-thumb {
+  background-color: #2563eb;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% { transform: rotate(25deg) translateX(-100%); }
+  100% { transform: rotate(25deg) translateX(100%); }
+}
+
+@keyframes modalIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-scaleIn {
+  animation: modalIn 0.3s ease forwards;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  max-width: 350px;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transform: translateX(150%);
+  transition: transform 0.3s ease-out;
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast.success {
+  background: #10b981;
+  color: white;
+}
+
+.toast.error {
+  background: #ef4444;
+  color: white;
+}
+
+.toast.warning {
+  background: #f59e0b;
+  color: white;
+}
+
+.toast i {
+  font-size: 1.5rem;
+}
